@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07fd4d3a-5d9f-4504-ad77-4b9f48b7ece9" name="Changes" comment="Refactor and Bug fixed">
-      <change afterPath="$PROJECT_DIR$/src/game/model/Cloud.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/model/Dinosaur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/model/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/model/Ground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/model/obstacle/Cactus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/model/obstacle/Obstacle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/model/obstacle/Pterodactyl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/view/GameWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/view/SpriteSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/constant/GameConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/constant/GameConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/core/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/core/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/view/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/GamePanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="07fd4d3a-5d9f-4504-ad77-4b9f48b7ece9" name="Changes" comment="All Basics done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,61 +46,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.5417717545715837" />
-      <entry key="MS500" value="2.9920011365678025" />
-      <entry key="S2" value="5.0969318493508515" />
-      <entry key="S5" value="6.161499462095873" />
-      <entry key="S10" value="7.19732679135816" />
-      <entry key="S30" value="10.474536561771352" />
-      <entry key="S60" value="13.159135498537657" />
-      <entry key="M2" value="15.851282108071064" />
-      <entry key="M5" value="18.501813608738956" />
-      <entry key="M10" value="20.270168320692278" />
-      <entry key="M15" value="22.842642489416985" />
-      <entry key="M30" value="33.08654914464706" />
-      <entry key="H1" value="47.69282629023079" />
-      <entry key="H2" value="60.380998630859104" />
-      <entry key="H4" value="68.79824121304351" />
-      <entry key="D1" value="77.16041147515593" />
-      <entry key="W1" value="78.73356982326673" />
+      <entry key="MS100" value="1.0003774503554097" />
+      <entry key="MS500" value="1.294349575575378" />
+      <entry key="S2" value="2.585601271044478" />
+      <entry key="S5" value="3.8792092617563725" />
+      <entry key="S10" value="4.722587001810887" />
+      <entry key="S30" value="5.511177627008994" />
+      <entry key="S60" value="5.74652979952134" />
+      <entry key="M2" value="5.871035474835246" />
+      <entry key="M5" value="6.121780548369638" />
+      <entry key="M10" value="7.939536305200261" />
+      <entry key="M15" value="10.804124674134448" />
+      <entry key="M30" value="21.19233245290355" />
+      <entry key="H1" value="38.322565560887384" />
+      <entry key="H2" value="55.70922163727111" />
+      <entry key="H4" value="68.42342883233594" />
+      <entry key="D1" value="81.92004813461806" />
+      <entry key="W1" value="84.55150510647097" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="3.1882008629643205E-279" />
-      <entry key="S10" value="7.933166702120379E-140" />
-      <entry key="S30" value="6.810772776662841E-47" />
-      <entry key="S60" value="1.1668984986074576E-23" />
-      <entry key="M2" value="4.830715976670722E-12" />
-      <entry key="M5" value="4.5104283701085865E-5" />
-      <entry key="M10" value="0.009497801558935998" />
-      <entry key="M15" value="0.05650565082381256" />
-      <entry key="M30" value="0.336171467114111" />
-      <entry key="H1" value="0.8199651610258644" />
-      <entry key="H2" value="1.2805976261176677" />
-      <entry key="H4" value="1.6003734676079984" />
-      <entry key="D1" value="1.927059925107546" />
-      <entry key="W1" value="1.9894133488322907" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="1.2578697645642017E-200" />
+      <entry key="S30" value="3.68631766451343E-67" />
+      <entry key="S60" value="8.584821391247739E-34" />
+      <entry key="M2" value="4.143435620098485E-17" />
+      <entry key="M5" value="4.241870704919603E-7" />
+      <entry key="M10" value="9.210705780419024E-4" />
+      <entry key="M15" value="0.011927197946353125" />
+      <entry key="M30" value="0.15444865201746114" />
+      <entry key="H1" value="0.5557852754123522" />
+      <entry key="H2" value="1.0543104487453976" />
+      <entry key="H4" value="1.4521091157275765" />
+      <entry key="D1" value="1.8960867563987622" />
+      <entry key="W1" value="1.9848136582767888" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.4659324029096128" />
-      <entry key="MS500" value="2.9121522100124784" />
-      <entry key="S2" value="5.057952901138969" />
-      <entry key="S5" value="6.143138888466146" />
-      <entry key="S10" value="7.187352265217618" />
-      <entry key="S30" value="10.470655318377652" />
-      <entry key="S60" value="13.156980873626415" />
-      <entry key="M2" value="15.850094036655284" />
-      <entry key="M5" value="18.501337760310673" />
-      <entry key="M10" value="20.279337733768443" />
-      <entry key="M15" value="22.898752317445922" />
-      <entry key="M30" value="33.422033112043856" />
-      <entry key="H1" value="48.51203858108729" />
-      <entry key="H2" value="61.66102812191504" />
-      <entry key="H4" value="70.39826457981916" />
-      <entry key="D1" value="79.08740185861308" />
-      <entry key="W1" value="80.72297293314361" />
+      <entry key="MS100" value="0.9596237570869036" />
+      <entry key="MS500" value="1.2834596086090515" />
+      <entry key="S2" value="2.579925273459421" />
+      <entry key="S5" value="3.8755433111109845" />
+      <entry key="S10" value="4.720258108124651" />
+      <entry key="S30" value="5.510240231491222" />
+      <entry key="S60" value="5.746036573866656" />
+      <entry key="M2" value="5.870782331065753" />
+      <entry key="M5" value="6.121673202169907" />
+      <entry key="M10" value="7.940373819935366" />
+      <entry key="M15" value="10.815933787566859" />
+      <entry key="M30" value="21.346447946190597" />
+      <entry key="H1" value="38.87783187242915" />
+      <entry key="H2" value="56.76306001265127" />
+      <entry key="H4" value="69.87521811622784" />
+      <entry key="D1" value="83.81606610609182" />
+      <entry key="W1" value="86.53630849789252" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -135,7 +120,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -189,7 +174,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1780288179333</updated>
-      <workItem from="1780288180755" duration="6750000" />
+      <workItem from="1780288180755" duration="7599000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -223,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780293154251</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="All Basics done">
+      <option name="closed" value="true" />
+      <created>1780295219934</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780295219934</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +226,7 @@
     <MESSAGE value="Init" />
     <MESSAGE value="Core and Constants" />
     <MESSAGE value="Refactor and Bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor and Bug fixed" />
+    <MESSAGE value="All Basics done" />
+    <option name="LAST_COMMIT_MESSAGE" value="All Basics done" />
   </component>
 </project>
