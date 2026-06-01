@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="07fd4d3a-5d9f-4504-ad77-4b9f48b7ece9" name="Changes" comment="Init">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="07fd4d3a-5d9f-4504-ad77-4b9f48b7ece9" name="Changes" comment="Refactor and Bug fixed">
+      <change afterPath="$PROJECT_DIR$/src/game/model/Cloud.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/model/Dinosaur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/model/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/model/Ground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/model/obstacle/Cactus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/model/obstacle/Obstacle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/model/obstacle/Pterodactyl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/view/GameWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/view/SpriteSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/constant/GameConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/constant/GameConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/core/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/core/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/view/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/GamePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,86 +28,118 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="8" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "itsR0sen"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/itsR0sen/Dino-Game.git",
+    "accountId": "b98fb59b-f370-4058-866d-59817bc3f620"
+  }
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.000000000000492" />
-      <entry key="S2" value="1.0008731554747328" />
-      <entry key="S5" value="1.0758720122860521" />
-      <entry key="S10" value="1.4102770167436516" />
-      <entry key="S30" value="3.0526147400869705" />
-      <entry key="S60" value="4.663596461811272" />
-      <entry key="M2" value="6.175848319726865" />
-      <entry key="M5" value="7.61161206906974" />
-      <entry key="M10" value="8.247831014942355" />
-      <entry key="M15" value="8.484186319349385" />
-      <entry key="M30" value="8.734489411234241" />
-      <entry key="H1" value="8.865259899919051" />
-      <entry key="H2" value="8.932122788336297" />
-      <entry key="H4" value="8.965933202729406" />
-      <entry key="D1" value="8.994304275701651" />
-      <entry key="W1" value="8.99918588454684" />
+      <entry key="MS100" value="1.5417717545715837" />
+      <entry key="MS500" value="2.9920011365678025" />
+      <entry key="S2" value="5.0969318493508515" />
+      <entry key="S5" value="6.161499462095873" />
+      <entry key="S10" value="7.19732679135816" />
+      <entry key="S30" value="10.474536561771352" />
+      <entry key="S60" value="13.159135498537657" />
+      <entry key="M2" value="15.851282108071064" />
+      <entry key="M5" value="18.501813608738956" />
+      <entry key="M10" value="20.270168320692278" />
+      <entry key="M15" value="22.842642489416985" />
+      <entry key="M30" value="33.08654914464706" />
+      <entry key="H1" value="47.69282629023079" />
+      <entry key="H2" value="60.380998630859104" />
+      <entry key="H4" value="68.79824121304351" />
+      <entry key="D1" value="77.16041147515593" />
+      <entry key="W1" value="78.73356982326673" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.625140887519332E-222" />
-      <entry key="MS500" value="5.2019017685426776E-45" />
-      <entry key="S2" value="1.1146797832835611E-11" />
-      <entry key="S5" value="6.074832060138976E-5" />
-      <entry key="S10" value="0.010950674774653198" />
-      <entry key="S30" value="0.3519879734636587" />
-      <entry key="S60" value="0.8388779862416423" />
-      <entry key="M2" value="1.2952224462698523" />
-      <entry key="M5" value="1.6809350522751387" />
-      <entry key="M10" value="1.8335369361651601" />
-      <entry key="M15" value="1.88742453348601" />
-      <entry key="M30" value="1.9428966825091833" />
-      <entry key="H1" value="1.9712414785172525" />
-      <entry key="H2" value="1.9855686480158756" />
-      <entry key="H4" value="1.9927712539540037" />
-      <entry key="D1" value="1.9987933896832708" />
-      <entry key="W1" value="1.9998275824905383" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="3.1882008629643205E-279" />
+      <entry key="S10" value="7.933166702120379E-140" />
+      <entry key="S30" value="6.810772776662841E-47" />
+      <entry key="S60" value="1.1668984986074576E-23" />
+      <entry key="M2" value="4.830715976670722E-12" />
+      <entry key="M5" value="4.5104283701085865E-5" />
+      <entry key="M10" value="0.009497801558935998" />
+      <entry key="M15" value="0.05650565082381256" />
+      <entry key="M30" value="0.336171467114111" />
+      <entry key="H1" value="0.8199651610258644" />
+      <entry key="H2" value="1.2805976261176677" />
+      <entry key="H4" value="1.6003734676079984" />
+      <entry key="D1" value="1.927059925107546" />
+      <entry key="W1" value="1.9894133488322907" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8010698775896221" />
-      <entry key="MS500" value="0.9566081580923367" />
-      <entry key="S2" value="0.9898306686132265" />
-      <entry key="S5" value="1.070983000571984" />
-      <entry key="S10" value="1.4146381053346857" />
-      <entry key="S30" value="3.3751124965804595" />
-      <entry key="S60" value="5.469218946742061" />
-      <entry key="M2" value="7.445661143934182" />
-      <entry key="M5" value="9.279303560849323" />
-      <entry key="M10" value="10.074115023143268" />
-      <entry key="M15" value="10.366624533590649" />
-      <entry key="M30" value="10.674814467952901" />
-      <entry key="H1" value="10.835195369398319" />
-      <entry key="H2" value="10.917033307882155" />
-      <entry key="H4" value="10.958374101936027" />
-      <entry key="D1" value="10.993042426206511" />
-      <entry key="W1" value="10.999005571306002" />
+      <entry key="MS100" value="1.4659324029096128" />
+      <entry key="MS500" value="2.9121522100124784" />
+      <entry key="S2" value="5.057952901138969" />
+      <entry key="S5" value="6.143138888466146" />
+      <entry key="S10" value="7.187352265217618" />
+      <entry key="S30" value="10.470655318377652" />
+      <entry key="S60" value="13.156980873626415" />
+      <entry key="M2" value="15.850094036655284" />
+      <entry key="M5" value="18.501337760310673" />
+      <entry key="M10" value="20.279337733768443" />
+      <entry key="M15" value="22.898752317445922" />
+      <entry key="M30" value="33.422033112043856" />
+      <entry key="H1" value="48.51203858108729" />
+      <entry key="H2" value="61.66102812191504" />
+      <entry key="H4" value="70.39826457981916" />
+      <entry key="D1" value="79.08740185861308" />
+      <entry key="W1" value="80.72297293314361" />
     </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 0,
   "fromUser": false
 }]]></component>
   <component name="ProjectId" id="3EWIznZnjLDbcodKWlST72Iv8LE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
@@ -108,6 +155,26 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Main" />
+      <module name="Dino-Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -122,7 +189,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1780288179333</updated>
-      <workItem from="1780288180755" duration="510000" />
+      <workItem from="1780288180755" duration="6750000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -132,7 +199,31 @@
       <option name="project" value="LOCAL" />
       <updated>1780288352385</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Init">
+      <option name="closed" value="true" />
+      <created>1780288710336</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780288710336</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Core and Constants">
+      <option name="closed" value="true" />
+      <created>1780293060207</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780293060207</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactor and Bug fixed">
+      <option name="closed" value="true" />
+      <created>1780293154251</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780293154251</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,20 +231,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <properties class="Main" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Core and Constants" />
+    <MESSAGE value="Refactor and Bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor and Bug fixed" />
   </component>
 </project>
