@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 public class GameWindow extends JFrame {
     public GameWindow(GamePanel gamePanel) {
-        this.setTitle("T-Rex Runner Engine");
+        this.setTitle("Chrome Dino");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.add(gamePanel);

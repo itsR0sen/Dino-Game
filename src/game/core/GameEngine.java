@@ -26,9 +26,16 @@ public class GameEngine implements Runnable {
 
     private GamePanel gamePanel;
 
+    // --- HIGH SCORE VARIABLES ---
+    private int highScore = 0;
+    private final String HIGH_SCORE_FILE = "res/High_Score.txt";
+
     public GameEngine() {
         this.collisionDetector = new CollisionDetector();
         initGame();
+
+        // Load the high score the moment the engine is created
+        loadHighScore();
     }
 
     public void initGame() {
@@ -53,7 +60,7 @@ public class GameEngine implements Runnable {
     @Override
     public void run() {
         long lastTime = System.nanoTime();
-        double amountOfTicks = 60.0;
+        double amountOfTicks = 60.0; // This is FPS
         double ns = 1000000000 / amountOfTicks;
         double delta = 0;
 
@@ -62,13 +69,16 @@ public class GameEngine implements Runnable {
             delta += (now - lastTime) / ns;
             lastTime = now;
 
+            // This block strictly executes 60 times per second
             if (delta >= 1) {
                 update();
-                delta--;
-            }
 
-            if (gamePanel != null) {
-                gamePanel.repaint();
+                // FIXED: We moved repaint() INSIDE the 60 FPS timer!
+                if (gamePanel != null) {
+                    gamePanel.repaint();
+                }
+
+                delta--;
             }
 
             try {
@@ -111,8 +121,12 @@ public class GameEngine implements Runnable {
                 }
             }
 
+            // Check for Game Over
             if (collisionDetector.checkCollision(dinosaur, obstacles)) {
                 state = GameState.GAME_OVER;
+
+                // Instantly save the high score when the player dies
+                saveHighScore();
             }
         }
     }
@@ -121,4 +135,39 @@ public class GameEngine implements Runnable {
     public List<Obstacle> getObstacles() { return obstacles; }
     public int getScore() { return score; }
     public GameState getState() { return state; }
+
+    // --- HIGH SCORE METHODS ---
+
+    // GamePanel will call this to draw the score on the screen
+    public int getHighScore() {
+        return highScore;
+    }
+
+    // Reads the saved score from the text file
+    private void loadHighScore() {
+        try {
+            java.nio.file.Path path = java.nio.file.Paths.get(HIGH_SCORE_FILE);
+            if (java.nio.file.Files.exists(path)) {
+                String content = java.nio.file.Files.readString(path).trim();
+                if (!content.isEmpty()) {
+                    highScore = Integer.parseInt(content);
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Could not load high score: " + e.getMessage());
+        }
+    }
+
+    // Saves the new high score to the text file if the player beat it
+    private void saveHighScore() {
+        if (score > highScore) {
+            highScore = score;
+            try {
+                java.nio.file.Path path = java.nio.file.Paths.get(HIGH_SCORE_FILE);
+                java.nio.file.Files.writeString(path, String.valueOf(highScore));
+            } catch (Exception e) {
+                System.err.println("Could not save high score: " + e.getMessage());
+            }
+        }
+    }
 }
