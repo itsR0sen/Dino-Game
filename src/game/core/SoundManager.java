@@ -13,10 +13,10 @@ public class SoundManager {
     private Clip duckClip;
 
     public SoundManager() {
-        // Pre-load sounds into memory for zero latency during gameplay
+        // Pre-load all clips into memory to prevent lag when they trigger
         jumpClip = loadSound("/audio/jump.wav");
         dieClip = loadSound("/audio/die.wav");
-        scoreClip = loadSound("/audio/milstone.wav");
+        scoreClip = loadSound("/audio/milstone.wav"); // Matches file spelling
         duckClip = loadSound("/audio/duck.wav");
     }
 
@@ -24,11 +24,11 @@ public class SoundManager {
         try {
             InputStream is = getClass().getResourceAsStream(path);
             if (is == null) {
-                System.err.println("AUDIO ERROR: Cannot find file: " + path);
+                System.err.println("[ERROR] SoundManager: Missing audio file at: " + path);
                 return null;
             }
 
-            // Wrapping it in a BufferedInputStream prevents "mark/reset" bugs in Java Audio
+            // Using BufferedInputStream here because Java's audio system throws a fit without mark/reset support
             InputStream bufferedIn = new BufferedInputStream(is);
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(bufferedIn);
 
@@ -36,8 +36,8 @@ public class SoundManager {
             clip.open(audioIn);
             return clip;
         } catch (Exception e) {
-            System.err.println("AUDIO ERROR: Failed to load: " + path);
-            e.printStackTrace();
+            System.err.println("[ERROR] SoundManager: Failed to parse or open audio clip: " + path);
+            System.err.println("Details: " + e.getMessage());
             return null;
         }
     }
@@ -50,7 +50,7 @@ public class SoundManager {
     private void play(Clip clip) {
         if (clip == null) return;
 
-        // If the sound is already playing, stop it and rewind it to frame 0
+        // Cut the sound short and snap back to start if it's already playing (stops delayed audio overlap)
         if (clip.isRunning()) {
             clip.stop();
         }

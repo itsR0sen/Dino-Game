@@ -4,26 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07fd4d3a-5d9f-4504-ad77-4b9f48b7ece9" name="Changes" comment="Design and Logical Correction">
-      <change afterPath="$PROJECT_DIR$/res/other/High_Score.txt" afterDir="false" />
+    <list default="true" id="07fd4d3a-5d9f-4504-ad77-4b9f48b7ece9" name="Changes" comment="Added Sound and Font. Fixed some bugs.">
+      <change afterPath="$PROJECT_DIR$/src/game/model/Particle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/view/renderer/BackgroundRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/view/renderer/ParticleRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/1_Cactus.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/1_Cactus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/3_Cactus.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/3_Cactus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Dino_Dead.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/Dino_Dead.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Dino_Duck.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/Dino_Duck.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Dino_Left_Run.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/Dino_Left_Run.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Dino_Right_Run.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/Dino_Right_Run.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/High_Score.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PressStart2P-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/res/other/PressStart2P-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Pterodactyl_Down.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/Pterodactyl_Down.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Pterodactyl_Up.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/Pterodactyl_Up.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/cloud.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/restart.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/img/restart.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/core/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/core/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/core/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/core/InputHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/core/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/core/SoundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/model/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/model/Cloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/model/Dinosaur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/model/Dinosaur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/model/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/model/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/model/Ground.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/model/obstacle/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/model/obstacle/Obstacle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/view/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/view/renderer/AbstractRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/renderer/AbstractRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/view/renderer/ImageRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/renderer/ImageRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/view/renderer/TextRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/renderer/TextRenderer.java" afterDir="false" />
     </list>
@@ -68,61 +64,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000243416127" />
-      <entry key="S2" value="1.0124907169220234" />
-      <entry key="S5" value="1.1734973276590526" />
-      <entry key="S10" value="1.441617382468655" />
-      <entry key="S30" value="2.716494770015575" />
-      <entry key="S60" value="5.009356389946425" />
-      <entry key="M2" value="8.111580945771344" />
-      <entry key="M5" value="11.770980438695396" />
-      <entry key="M10" value="14.447384695466766" />
-      <entry key="M15" value="16.465696426502525" />
-      <entry key="M30" value="21.382871453897614" />
-      <entry key="H1" value="30.049949580121393" />
-      <entry key="H2" value="49.75193002060875" />
-      <entry key="H4" value="80.21732870197347" />
-      <entry key="D1" value="137.93364299881455" />
-      <entry key="W1" value="153.23870139592134" />
+      <entry key="MS100" value="1.54850095925793" />
+      <entry key="MS500" value="2.893932977156635" />
+      <entry key="S2" value="4.191131806529616" />
+      <entry key="S5" value="4.642143393832692" />
+      <entry key="S10" value="4.81530955422005" />
+      <entry key="S30" value="5.428212293958452" />
+      <entry key="S60" value="7.819850740043392" />
+      <entry key="M2" value="11.924049290498457" />
+      <entry key="M5" value="16.864467408675537" />
+      <entry key="M10" value="19.20518818963904" />
+      <entry key="M15" value="20.15244533547367" />
+      <entry key="M30" value="22.44575222403093" />
+      <entry key="H1" value="29.28385561719163" />
+      <entry key="H2" value="47.07206411544209" />
+      <entry key="H4" value="79.10502366994783" />
+      <entry key="D1" value="152.36509022989878" />
+      <entry key="W1" value="174.00876325030342" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.2747919683319307E-203" />
-      <entry key="MS500" value="3.184466938722851E-41" />
-      <entry key="S2" value="7.570300227605634E-11" />
-      <entry key="S5" value="1.0721282802827308E-4" />
-      <entry key="S10" value="0.016089981595752215" />
-      <entry key="S30" value="0.6119328911046247" />
-      <entry key="S60" value="1.668365650258306" />
-      <entry key="M2" value="2.8701250657438404" />
-      <entry key="M5" value="4.25269429224799" />
-      <entry key="M10" value="5.165397953380498" />
-      <entry key="M15" value="5.680794641455278" />
-      <entry key="M30" value="6.742207225228987" />
-      <entry key="H1" value="8.189290061853683" />
-      <entry key="H2" value="9.788308722329988" />
-      <entry key="H4" value="11.264888429925017" />
-      <entry key="D1" value="13.396707355065203" />
-      <entry key="W1" value="13.908932818881468" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="1.1505236957704726E-213" />
+      <entry key="S30" value="2.53990303518535E-71" />
+      <entry key="S60" value="1.0748501210255971E-35" />
+      <entry key="M2" value="7.284993297928152E-18" />
+      <entry key="M5" value="3.894713341824975E-7" />
+      <entry key="M10" value="0.0015631816674848845" />
+      <entry key="M15" value="0.025606262972629273" />
+      <entry key="M30" value="0.4526584712119681" />
+      <entry key="H1" value="2.1219274537017094" />
+      <entry key="H2" value="4.982528567472559" />
+      <entry key="H4" value="8.03707394719969" />
+      <entry key="D1" value="12.663679640333987" />
+      <entry key="W1" value="13.797571219006075" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="4.591359579242347E-15" />
-      <entry key="MS500" value="0.0013564146895895424" />
-      <entry key="S2" value="0.20262642840388373" />
-      <entry key="S5" value="0.6799731508232147" />
-      <entry key="S10" value="1.1613073897644601" />
-      <entry key="S30" value="3.179611610503879" />
-      <entry key="S60" value="6.565763545649689" />
-      <entry key="M2" value="10.902270306452282" />
-      <entry key="M5" value="15.978486297015769" />
-      <entry key="M10" value="19.58475135641176" />
-      <entry key="M15" value="22.125502496258516" />
-      <entry key="M30" value="28.112137855024343" />
-      <entry key="H1" value="38.231142759549414" />
-      <entry key="H2" value="59.53527779502158" />
-      <entry key="H4" value="91.47931289612053" />
-      <entry key="D1" value="151.32976625267213" />
-      <entry key="W1" value="167.14754739760738" />
+      <entry key="MS100" value="1.3989941013428677" />
+      <entry key="MS500" value="2.66910986407693" />
+      <entry key="S2" value="4.096832744280003" />
+      <entry key="S5" value="4.599856090445815" />
+      <entry key="S10" value="4.793322893477735" />
+      <entry key="S30" value="5.420410406023972" />
+      <entry key="S60" value="7.815133341093737" />
+      <entry key="M2" value="11.92093893073579" />
+      <entry key="M5" value="16.86284557719869" />
+      <entry key="M10" value="19.20584043283185" />
+      <entry key="M15" value="20.177332314330428" />
+      <entry key="M30" value="22.897217252451448" />
+      <entry key="H1" value="31.403519555098384" />
+      <entry key="H2" value="52.05198382785466" />
+      <entry key="H4" value="87.13998355002688" />
+      <entry key="D1" value="165.02821069939358" />
+      <entry key="W1" value="187.80624734222468" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -208,7 +204,7 @@
       <workItem from="1780288180755" duration="7968000" />
       <workItem from="1780305714403" duration="878000" />
       <workItem from="1780569077181" duration="12233000" />
-      <workItem from="1780654141623" duration="7631000" />
+      <workItem from="1780654141623" duration="13822000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -266,11 +262,30 @@
       <option name="project" value="LOCAL" />
       <updated>1780611458947</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Sound and Font. Fixed some bugs.">
+      <option name="closed" value="true" />
+      <created>1780665868852</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780665868853</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
@@ -279,6 +294,22 @@
     <MESSAGE value="All Basics done" />
     <MESSAGE value="Readme" />
     <MESSAGE value="Design and Logical Correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Design and Logical Correction" />
+    <MESSAGE value="Added Sound and Font. Fixed some bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Sound and Font. Fixed some bugs." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://C:/Program Files/Java/jdk-25/lib/src.zip!/java.desktop/javax/swing/JComponent.java</url>
+          <line>847</line>
+          <properties class="javax.swing.JComponent" method="paintComponent">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

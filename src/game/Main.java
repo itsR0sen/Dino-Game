@@ -13,19 +13,13 @@ public class Main {
             GameEngine engine = new GameEngine();
             GamePanel panel = new GamePanel(engine);
             engine.setGamePanel(panel);
-
-            // FIX: Pass 'engine' instead of 'engine.getDinosaur()'.
-            // The restart callback now only needs ONE simple job: reset the engine.
             InputHandler input = new InputHandler(engine, () -> {
                 if (engine.getState() == game.constant.GameState.GAME_OVER) {
                     engine.initGame();
-
-                    // Safe guard: Ensure the panel keeps keyboard focus when restarting via the 'R' key
+                    // Force keyboard focus
                     panel.requestFocusInWindow();
                 }
             });
-
-            // Add the listener exactly once. It will work forever!
             panel.addKeyListener(input);
 
             new GameWindow(panel);

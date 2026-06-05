@@ -34,46 +34,60 @@ public class ImageRenderer extends AbstractRenderer {
             pterodactylDown = loadImage("/img/Pterodactyl_Down.png");
             restart = loadImage("/img/restart.png");
         } catch (Exception e) {
-            System.err.println("CRITICAL: Failed to load images.");
-            e.printStackTrace();
+            System.err.println("[ERROR] ImageRenderer: Failed to cache raw sprites.");
+            System.err.println("Details: " + e.getMessage());
         }
     }
 
     private BufferedImage loadImage(String path) throws Exception {
         InputStream is = getClass().getResourceAsStream(path);
-        if (is == null) throw new Exception("Cannot find file: " + path);
+        if (is == null) {
+            throw new Exception("Missing asset resource: " + path);
+        }
         return ImageIO.read(is);
     }
 
     @Override
     public void render(Graphics2D g2d, GameEngine engine, int animationTicks) {
+        // Toggle frames every 18 ticks for walking/flapping speeds
         int animFrame = (animationTicks / 18) % 2;
 
+        // Base ground floor line divider
         g2d.setColor(Color.LIGHT_GRAY);
         g2d.drawLine(0, GameConfig.GROUND_Y, GameConfig.WINDOW_WIDTH, GameConfig.GROUND_Y);
 
+        // State machine for deciding the current dinosaur sprite
         BufferedImage currentDino = dinoLeft;
-        if (engine.getState() == GameState.GAME_OVER) currentDino = dinoDead;
-        else if (engine.getDinosaur().getY() < GameConfig.GROUND_Y - engine.getDinosaur().getHeight()) currentDino = dinoLeft;
-        else currentDino = engine.getDinosaur().isDucking() ? dinoDuck : ((animFrame == 0) ? dinoLeft : dinoRight);
+        if (engine.getState() == GameState.GAME_OVER) {
+            currentDino = dinoDead; // Freeze frame on death
+        } else if (engine.getDinosaur().getY() < GameConfig.GROUND_Y - engine.getDinosaur().getHeight()) {
+            currentDino = dinoLeft; // Force stationary frame when airborne
+        } else {
+            currentDino = engine.getDinosaur().isDucking() ? dinoDuck : ((animFrame == 0) ? dinoLeft : dinoRight);
+        }
 
         if (currentDino != null) {
             g2d.drawImage(currentDino, (int) engine.getDinosaur().getX(), (int) engine.getDinosaur().getY(),
                     engine.getDinosaur().getWidth(), engine.getDinosaur().getHeight(), null);
         }
 
+        // Loop and paint individual active hazards
         for (Obstacle obs : engine.getObstacles()) {
             BufferedImage currentObs = null;
-            if (obs instanceof Pterodactyl) currentObs = (animFrame == 0) ? pterodactylUp : pterodactylDown;
-            else currentObs = (obs.getWidth() > 45) ? cactus3 : cactus1;
+            if (obs instanceof Pterodactyl) {
+                currentObs = (animFrame == 0) ? pterodactylUp : pterodactylDown;
+            } else {
+                currentObs = (obs.getWidth() > 45) ? cactus3 : cactus1; // Pick size based on hitbox width
+            }
 
             if (currentObs != null) {
                 g2d.drawImage(currentObs, (int) obs.getX(), (int) obs.getY(), obs.getWidth(), obs.getHeight(), null);
             }
         }
 
+        // Draw the restart button on game over
         if (engine.getState() == GameState.GAME_OVER && restart != null) {
-            // FIXED: Replaced restart.getWidth() with 50 to match the scaled draw size
+            // Hardcoded to 50x50 layout bounding dimensions
             int rx = (GameConfig.WINDOW_WIDTH - 50) / 2 + 5;
             int ry = GameConfig.WINDOW_HEIGHT / 2 - 60;
 
@@ -81,15 +95,13 @@ public class ImageRenderer extends AbstractRenderer {
         }
     }
 
-    // ENCAPSULATION: The click bounds now perfectly match the 50x50 drawing coordinates!
+    // Keep this mouse checker mathematically tied to the render positions above!
     public boolean isRestartClicked(int mouseX, int mouseY) {
         if (restart == null) return false;
 
-        // Exact same X and Y math as your render method above
         int rx = (GameConfig.WINDOW_WIDTH - 50) / 2 + 5;
         int ry = GameConfig.WINDOW_HEIGHT / 2 - 60;
 
-        // Exact same width and height (50) as your render method above
         return (mouseX >= rx && mouseX <= rx + 50 &&
                 mouseY >= ry && mouseY <= ry + 50);
     }
