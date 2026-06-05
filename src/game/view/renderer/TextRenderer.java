@@ -18,7 +18,7 @@ public class TextRenderer extends AbstractRenderer {
         try {
             // 1. Load the font file from the 'res' folder
             // Make sure the file name exactly matches the one you downloaded!
-            InputStream is = getClass().getResourceAsStream("/PressStart2P-Regular.ttf");
+            InputStream is = getClass().getResourceAsStream("/other/PressStart2P-Regular.ttf");
 
             if (is == null) {
                 throw new Exception("Font file not found!");
@@ -57,7 +57,7 @@ public class TextRenderer extends AbstractRenderer {
             // Note: Since this font is already very stylized, you might not need the spaces
             // between the letters anymore. You can change it to "GAME OVER" if it looks too wide!
             drawAlignedString(g2d, "GAME OVER", gameOverFont, 0, 0, 0, -80);
-            drawAlignedString(g2d, "Click to RESTART", restartFont, 0, 0, 0, 0);
+            drawAlignedString(g2d, "Click to RESTART or Press SPACE BAR", restartFont, 0, 0, 0, 0);
         }
     }
 }

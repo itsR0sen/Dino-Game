@@ -24,15 +24,15 @@ public class ImageRenderer extends AbstractRenderer {
 
     private void loadImages() {
         try {
-            dinoLeft = loadImage("/Dino_Left_Run.png");
-            dinoRight = loadImage("/Dino_Right_Run.png");
-            dinoDead = loadImage("/Dino_Dead.png");
-            dinoDuck = loadImage("/Dino_Duck.png");
-            cactus1 = loadImage("/1_Cactus.png");
-            cactus3 = loadImage("/3_Cactus.png");
-            pterodactylUp = loadImage("/Pterodactyl_Up.png");
-            pterodactylDown = loadImage("/Pterodactyl_Down.png");
-            restart = loadImage("/restart.png");
+            dinoLeft = loadImage("/img/Dino_Left_Run.png");
+            dinoRight = loadImage("/img/Dino_Right_Run.png");
+            dinoDead = loadImage("/img/Dino_Dead.png");
+            dinoDuck = loadImage("/img/Dino_Duck.png");
+            cactus1 = loadImage("/img/1_Cactus.png");
+            cactus3 = loadImage("/img/3_Cactus.png");
+            pterodactylUp = loadImage("/img/Pterodactyl_Up.png");
+            pterodactylDown = loadImage("/img/Pterodactyl_Down.png");
+            restart = loadImage("/img/restart.png");
         } catch (Exception e) {
             System.err.println("CRITICAL: Failed to load images.");
             e.printStackTrace();

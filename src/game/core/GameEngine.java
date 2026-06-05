@@ -19,6 +19,7 @@ public class GameEngine implements Runnable {
     private Dinosaur dinosaur;
     private List<Obstacle> obstacles;
     private final CollisionDetector collisionDetector;
+    private final SoundManager soundManager; // Managed internally
     private GameState state;
     private int score = 0;
     private float currentSpeed;
@@ -28,14 +29,21 @@ public class GameEngine implements Runnable {
 
     // --- HIGH SCORE VARIABLES ---
     private int highScore = 0;
-    private final String HIGH_SCORE_FILE = "res/High_Score.txt";
+    private final String HIGH_SCORE_FILE = "res/other/High_Score.txt";
 
+    // FIX 1: Removed the parameter so Main.java compiles flawlessly.
+    // The engine creates its own internal SoundManager.
     public GameEngine() {
         this.collisionDetector = new CollisionDetector();
+        this.soundManager = new SoundManager();
         initGame();
 
         // Load the high score the moment the engine is created
         loadHighScore();
+    }
+
+    public SoundManager getSoundManager() {
+        return soundManager;
     }
 
     public void initGame() {
@@ -72,17 +80,16 @@ public class GameEngine implements Runnable {
             // This block strictly executes 60 times per second
             if (delta >= 1) {
                 update();
-
-                // FIXED: We moved repaint() INSIDE the 60 FPS timer!
                 if (gamePanel != null) {
                     gamePanel.repaint();
                 }
-
                 delta--;
             }
 
+            // FIX 3: Restored Sleep! This gives the CPU breathing room
+            // and lets Swing repaint smoothly without lagging.
             try {
-                Thread.sleep(2);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -97,15 +104,17 @@ public class GameEngine implements Runnable {
             // Speed scaling over time
             if (score % 500 == 0) {
                 currentSpeed += 0.5f;
+
+                // FIX 2A: Play the checkpoint milestone sound!
+                soundManager.playScore();
             }
 
             // Procedural Obstacle Spawning Logic
             if (obstacles.isEmpty() || obstacles.get(obstacles.size() - 1).getX() < GameConfig.WINDOW_WIDTH - 300) {
-                if (random.nextInt(100) < 2) { // 2% chance per tick once buffer distance clears
+                if (random.nextInt(100) < 2) {
                     if (random.nextBoolean()) {
                         obstacles.add(new Cactus(GameConfig.WINDOW_WIDTH, 20 + random.nextInt(15), 40 + random.nextInt(20), currentSpeed));
                     } else {
-                        // High/Low alternative altitudes for Pterodactyl flying layers
                         int altitude = random.nextBoolean() ? GameConfig.GROUND_Y - 80 : GameConfig.GROUND_Y - 40;
                         obstacles.add(new Pterodactyl(GameConfig.WINDOW_WIDTH, altitude, 45, 35, currentSpeed));
                     }
@@ -121,9 +130,12 @@ public class GameEngine implements Runnable {
                 }
             }
 
-            // Check for Game Over
+            // Check Collision
             if (collisionDetector.checkCollision(dinosaur, obstacles)) {
                 state = GameState.GAME_OVER;
+
+                // FIX 2B: Play death crash sound immediately on impact!
+                soundManager.playDie();
 
                 // Instantly save the high score when the player dies
                 saveHighScore();
@@ -138,12 +150,10 @@ public class GameEngine implements Runnable {
 
     // --- HIGH SCORE METHODS ---
 
-    // GamePanel will call this to draw the score on the screen
     public int getHighScore() {
         return highScore;
     }
 
-    // Reads the saved score from the text file
     private void loadHighScore() {
         try {
             java.nio.file.Path path = java.nio.file.Paths.get(HIGH_SCORE_FILE);
@@ -158,7 +168,6 @@ public class GameEngine implements Runnable {
         }
     }
 
-    // Saves the new high score to the text file if the player beat it
     private void saveHighScore() {
         if (score > highScore) {
             highScore = score;

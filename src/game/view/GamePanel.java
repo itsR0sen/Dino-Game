@@ -32,7 +32,7 @@ public class GamePanel extends JPanel {
     public GamePanel(GameEngine engine) {
         this.engine = engine;
         this.setPreferredSize(new Dimension(GameConfig.WINDOW_WIDTH, GameConfig.WINDOW_HEIGHT));
-        this.setBackground(Color.WHITE);
+        this.setBackground(new Color(245, 245, 245));
         this.setDoubleBuffered(true);
         this.setFocusable(true);
 
@@ -50,7 +50,7 @@ public class GamePanel extends JPanel {
                     // We just ask the ImageRenderer if its button was clicked!
                     if (imageRenderer.isRestartClicked(e.getX(), e.getY())) {
                         engine.initGame();
-                        requestFocusInWindow();
+                        GamePanel.this.requestFocus();
                     }
                 }
             }
@@ -61,7 +61,9 @@ public class GamePanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
-        animationTicks++;
+        if (engine.getState() == game.constant.GameState.PLAYING) {
+            animationTicks++;
+        }
 
         // POLYMORPHISM: Render everything in the pipeline without caring what it is
         for (AbstractRenderer renderer : renderingPipeline) {

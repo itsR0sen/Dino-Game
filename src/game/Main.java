@@ -14,21 +14,20 @@ public class Main {
             GamePanel panel = new GamePanel(engine);
             engine.setGamePanel(panel);
 
-            // Hook Input listener along with atomic game reset callback hook routine
-            InputHandler input = new InputHandler(engine.getDinosaur(), () -> {
+            // FIX: Pass 'engine' instead of 'engine.getDinosaur()'.
+            // The restart callback now only needs ONE simple job: reset the engine.
+            InputHandler input = new InputHandler(engine, () -> {
                 if (engine.getState() == game.constant.GameState.GAME_OVER) {
                     engine.initGame();
-                    panel.removeKeyListener(panel.getKeyListeners()[0]);
-                    InputHandler newInput = new InputHandler(engine.getDinosaur(), null); // update listener reference pointer
-                    panel.addKeyListener(new InputHandler(engine.getDinosaur(), () -> {
-                        if (engine.getState() == game.constant.GameState.GAME_OVER) {
-                            engine.initGame();
-                        }
-                    }));
+
+                    // Safe guard: Ensure the panel keeps keyboard focus when restarting via the 'R' key
+                    panel.requestFocusInWindow();
                 }
             });
 
+            // Add the listener exactly once. It will work forever!
             panel.addKeyListener(input);
+
             new GameWindow(panel);
             engine.startGame();
         });
