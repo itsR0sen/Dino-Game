@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07fd4d3a-5d9f-4504-ad77-4b9f48b7ece9" name="Changes" comment="Background design and Refactored" />
+    <list default="true" id="07fd4d3a-5d9f-4504-ad77-4b9f48b7ece9" name="Changes" comment="Gameplay Gif Added">
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,23 +48,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.003043654079364" />
-      <entry key="MS500" value="1.3505975739359417" />
-      <entry key="S2" value="2.7609169383960546" />
-      <entry key="S5" value="4.601606966736128" />
-      <entry key="S10" value="5.91117945192283" />
-      <entry key="S30" value="7.187807274706653" />
-      <entry key="S60" value="7.577010886077427" />
-      <entry key="M2" value="7.784074803532877" />
-      <entry key="M5" value="7.912538718314455" />
-      <entry key="M10" value="7.956085114884753" />
-      <entry key="M15" value="7.9706827591212095" />
-      <entry key="M30" value="7.988750444108762" />
-      <entry key="H1" value="8.354649828731766" />
-      <entry key="H2" value="13.229922706335431" />
-      <entry key="H4" value="34.374990319880965" />
-      <entry key="D1" value="134.8783456668357" />
-      <entry key="W1" value="177.51740899092502" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000000542344" />
+      <entry key="S5" value="1.0000783044554022" />
+      <entry key="S10" value="1.0091029335393278" />
+      <entry key="S30" value="1.3909002954783796" />
+      <entry key="S60" value="2.413401053497065" />
+      <entry key="M2" value="3.8932037677024134" />
+      <entry key="M5" value="6.304884993157638" />
+      <entry key="M10" value="8.782309813790507" />
+      <entry key="M15" value="10.227926490747727" />
+      <entry key="M30" value="12.222585533128266" />
+      <entry key="H1" value="13.793687552637852" />
+      <entry key="H2" value="18.985239274999877" />
+      <entry key="H4" value="39.78257142464473" />
+      <entry key="D1" value="140.8355643370856" />
+      <entry key="W1" value="184.32098516183135" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -70,37 +72,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="2.8424608594716368E-300" />
-      <entry key="S60" value="3.595725978170039E-150" />
-      <entry key="M2" value="4.213553335196789E-75" />
-      <entry key="M5" value="4.9586474728454364E-30" />
-      <entry key="M10" value="5.5776764865201825E-15" />
-      <entry key="M15" value="5.979186682389685E-10" />
-      <entry key="M30" value="6.917013260516909E-5" />
-      <entry key="H1" value="0.026230375620077337" />
-      <entry key="H2" value="0.5539706888857147" />
-      <entry key="H4" value="2.6798868562585403" />
-      <entry key="D1" value="10.545398546108174" />
-      <entry key="W1" value="13.441444461593104" />
+      <entry key="S30" value="6.3796978548252E-310" />
+      <entry key="S60" value="5.386905991184609E-155" />
+      <entry key="M2" value="1.630890864470652E-77" />
+      <entry key="M5" value="5.376179935205947E-31" />
+      <entry key="M10" value="1.8365747189677808E-15" />
+      <entry key="M15" value="2.851099017530372E-10" />
+      <entry key="M30" value="4.776433128679334E-5" />
+      <entry key="H1" value="0.021797016681348955" />
+      <entry key="H2" value="0.5049903275183492" />
+      <entry key="H4" value="2.558671875022632" />
+      <entry key="D1" value="10.46436036719714" />
+      <entry key="W1" value="13.426639428941348" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9555576664770767" />
-      <entry key="MS500" value="1.338006214682865" />
-      <entry key="S2" value="2.7206926668389184" />
-      <entry key="S5" value="4.5256344675127185" />
-      <entry key="S10" value="5.845312160157221" />
-      <entry key="S30" value="7.155929767585631" />
-      <entry key="S60" value="7.559503597294014" />
-      <entry key="M2" value="7.7748997046389805" />
-      <entry key="M5" value="7.908763550266527" />
-      <entry key="M10" value="7.954179667942925" />
-      <entry key="M15" value="7.969408466546481" />
-      <entry key="M30" value="7.988180281248305" />
-      <entry key="H1" value="8.380532146184041" />
-      <entry key="H2" value="13.783443171347324" />
-      <entry key="H4" value="37.054092146620725" />
-      <entry key="D1" value="145.42326521917107" />
-      <entry key="W1" value="190.95876666605574" />
+      <entry key="MS100" value="0.8179020585577811" />
+      <entry key="MS500" value="0.9605948639534766" />
+      <entry key="S2" value="0.9899997047709886" />
+      <entry key="S5" value="0.9960653543841129" />
+      <entry key="S10" value="1.0070512440147086" />
+      <entry key="S30" value="1.3898544773513608" />
+      <entry key="S60" value="2.412594997440281" />
+      <entry key="M2" value="3.8926114393393543" />
+      <entry key="M5" value="6.3041941172595" />
+      <entry key="M10" value="8.78152910549179" />
+      <entry key="M15" value="10.227213637999649" />
+      <entry key="M30" value="12.222137626804912" />
+      <entry key="H1" value="13.81516783647923" />
+      <entry key="H2" value="19.489805331452253" />
+      <entry key="H4" value="42.340486824738285" />
+      <entry key="D1" value="151.29944822889368" />
+      <entry key="W1" value="197.74753773373467" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -186,7 +188,7 @@
       <workItem from="1780288180755" duration="7968000" />
       <workItem from="1780305714403" duration="878000" />
       <workItem from="1780569077181" duration="12233000" />
-      <workItem from="1780654141623" duration="14121000" />
+      <workItem from="1780654141623" duration="14920000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -260,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780688841513</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Gameplay Gif Added">
+      <option name="closed" value="true" />
+      <created>1780689637100</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1780689637100</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +296,8 @@
     <MESSAGE value="Design and Logical Correction" />
     <MESSAGE value="Added Sound and Font. Fixed some bugs." />
     <MESSAGE value="Background design and Refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="Background design and Refactored" />
+    <MESSAGE value="Gameplay Gif Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gameplay Gif Added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
